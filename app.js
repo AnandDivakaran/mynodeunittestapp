@@ -17,3 +17,15 @@ exports.foo = () => {
     console.log('console.log was called');
     console.warn('console.warn was called');
 };
+
+exports.bar = async (filename) => {
+    await exports.createFile(filename);
+    let result = await callDB(filename);
+
+    return result;
+};
+
+
+exports.createFile = (filename) => {
+    return Promise.resolve();
+}
