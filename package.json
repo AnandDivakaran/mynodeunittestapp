@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha './**/*.test.js' --recursive"
+    "test": "mocha './*.test.js' --recursive"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "sinon": "^9.2.2"
-  }
+    "sinon": "^9.2.2",
+    "sinon-chai": "^3.5.0"
+  },
+  "dependencies": {}
 }

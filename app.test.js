@@ -1,7 +1,11 @@
 const chai = require('chai');
 const expect = chai.expect;
 const chaiAsPromised = require('chai-as-promised');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai');
 chai.use(chaiAsPromised);
+chai.use(sinonChai);
+
 
 const demo = require('./app');
 
@@ -42,6 +46,14 @@ describe('app', () => {
         });    
     });
 
-    
+    context('foo', () => {
+        it('spy on log', () => {
+            let spy = sinon.spy(console, 'log');
+            demo.foo();
+            //expect(spy.calledOnce).to.be.true;
+            expect(spy).to.have.been.calledOnce;
+            spy.restore();
+        });
+    });  
  
 });

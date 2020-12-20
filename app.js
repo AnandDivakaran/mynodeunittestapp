@@ -12,3 +12,8 @@ exports.addPromise = (a, b) => {
     return Promise.resolve(a + b);
     //return Promise.reject( new Error('fake'));
 };
+
+exports.foo = () => {
+    console.log('console.log was called');
+    console.warn('console.warn was called');
+};
